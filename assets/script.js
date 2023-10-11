@@ -19,7 +19,7 @@ let now = dayjs().format("pp");
   }
 }
 
-setInterval(updateTIme, 1000);
+setInterval(updateTime, 1000);
 
 
 var saveBtn = $(".saveHolder");
@@ -28,11 +28,11 @@ var block9am = $("#hour-9");
 var block10am = $("#hour-10");
 var block11am = $("#hour-11");
 var block12pm = $("#hour-12");
-var block1pm = $("#hour-1");
-var block2pm = $("#hour-2");
-var block3pm = $("#hour-3");
-var block4pm = $("#hour-4");
-var block5pm = $("#hour-5");
+var block1pm = $("#hour-13");
+var block2pm = $("#hour-14");
+var block3pm = $("#hour-15");
+var block4pm = $("#hour-16");
+var block5pm = $("#hour-17");
 
 var blockArr = [
   block9am, 
@@ -49,7 +49,7 @@ var blockArr = [
 
 updateTime()
 
-document.getElementById("saveBtn").addEventListener("click", function (){
+document.getElementById("saveHolder").addEventListener("click", function (){
 
   var user = document.getElementById("description").value ;
 
