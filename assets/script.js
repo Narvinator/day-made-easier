@@ -48,3 +48,22 @@ var blockArr = [
 
 
 updateTime()
+
+document.getElementById("saveBtn").addEventListener("click", function (){
+
+  var user = document.getElementById("description").value ;
+
+  localStorage.setItem("description", user) ;
+  console.log("saved")
+})
+
+let field = document.getElementById("description");
+
+if (sessionStorage.getItem ("autosave")) {
+field.value = sessionStorage.getItem("autosave");
+}
+field.addEventListener("change", () => {
+  sessionStorage.setItem("autosave", field.value);
+}
+);
+
