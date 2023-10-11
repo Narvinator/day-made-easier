@@ -1,5 +1,5 @@
 
-
+// The first part of this function is what gives the top of the page the full date.
 
 function updateTime() {
   var date = dayjs();
@@ -19,8 +19,10 @@ let now = dayjs().format("pp");
   }
 }
 
+
 setInterval(updateTime, 1000);
 
+// Gives the hour blocks on the scheduler a property to be used in an Array
 
 var saveBtn = $(".saveHolder");
 var blockContainer = $(".container");
@@ -33,6 +35,8 @@ var block2pm = $("#hour-14");
 var block3pm = $("#hour-15");
 var block4pm = $("#hour-16");
 var block5pm = $("#hour-17");
+
+// Actual array for use in the loop at the top of the page
 
 var blockArr = [
   block9am, 
@@ -57,6 +61,8 @@ document.getElementById("saveHolder").addEventListener("click", function (){
   console.log("saved")
 })
 
+// Accounts for page being refreshed with an autosave feature.
+
 let field = document.getElementById("description");
 
 if (sessionStorage.getItem ("autosave")) {
@@ -64,6 +70,8 @@ field.value = sessionStorage.getItem("autosave");
 }
 field.addEventListener("change", () => {
   sessionStorage.setItem("autosave", field.value);
+  // Saves the current session
 }
 );
+
 
